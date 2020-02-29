@@ -2,7 +2,7 @@
     <div class="col-3">
         <div class="card">
             <div class="card-header">
-                Line 1
+                <a href="<?= site_url() ?>/dashboard">Line 1</a>
             </div>
             <div class="card-body">
                 <div id="chart1"></div>
