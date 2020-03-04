@@ -16,9 +16,9 @@ class Bmdetail_m extends CI_Model
     }
 
 
-    public function getWhere($id)
+    public function getWhere($key,$id)
     {
-        $q= $this->db->get_where('bm_detail', array('id' => $id));
+        $q= $this->db->get_where('bm_detail', array($key => $id));
 		return $q->result();
         
     }
@@ -42,15 +42,17 @@ class Bmdetail_m extends CI_Model
     public function update()
     {
         $data= array(
-            'id_model' => $this->input->post('id_model'),
-            'id_ng' => $this->input->post('id_ng'),
             'jam' => $this->input->post('jam'),
-            'qty' => $this->input->post('qty'),
-            'remark' => $this->input->post('remark')
+            'menit' => $this->input->post('menit'),
+            'mesin' => $this->input->post('mesin'),
+            'id_bm' => $this->input->post('bm'),
+            'detail' => $this->input->post('detail'),
+            'penanganan' => $this->input->post('action'),
+            'pic' => $this->input->post('pic')
         );
         $id = $this->input->post('id');
         $this->db->where('id', $id);
-        return $this->db->update('ng_detail', $data);
+        return $this->db->update('bm_detail', $data);
     }
 
     function delete($id){

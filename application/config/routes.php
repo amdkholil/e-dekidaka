@@ -1,6 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['api'] = 'Api/index';
+$route['api'] = 'Api/lines';
+
+
 $route['dashboard'] = 'Dashboard/index';
 $route['about'] = 'About/index';
 

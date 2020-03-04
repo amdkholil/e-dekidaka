@@ -61,7 +61,7 @@ class Produksi extends CI_Controller{
         $data['ng'] = $this->ng_m->get();
         $data['ng_detail'] = $this->ngdetail_m->getWhere('id_prod', $id);
         $data['bm'] = $this->bm_m->get();
-        $data['bm_detail'] = $this->bmdetail_m->get();
+        $data['bm_detail'] = $this->bmdetail_m->getWhere('id_prod', $id);
             $this->load->view('template/header');
             $this->load->view('produksi/dekidaka', $data);
             $this->load->view('template/footer');
@@ -138,5 +138,14 @@ class Produksi extends CI_Controller{
         }
     }
 
-
+    public function editbm()
+    {
+        $id = $this->input->post('id_prod');
+        if(!$this->bmdetail_m->update()){
+            $this->session->set_flashdata('warning', $this->db->show_error());
+        }else{
+            $this->session->set_flashdata('success','Berhasil!');
+            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+        }
+    }
 }
