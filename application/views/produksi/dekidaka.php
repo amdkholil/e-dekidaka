@@ -50,7 +50,7 @@
 				<!-- nav tab menu -->
 				<ul class="nav nav-tabs col-md-12" id="tab-prod" role="tablist">
 					<li class="nav-item">
-						<a class="nav-link active" id="a-prod" data-toggle="tab" href="#c-prod" role="tab"
+						<a class="nav-link" id="a-prod" data-toggle="tab" href="#c-prod" role="tab"
 							aria-controls="c-prod" aria-selected="true">Produksi</a>
 					</li>
 					<li class="nav-item">
@@ -69,9 +69,9 @@
 				<!-- end nav tab menu -->
 				<!------------------------------------------------------------------------>
 				<!----------------------------- Table tab -------------------------------->
-				<div class="tab-content" id="tab-content">
+				<div class="tab-content col-sm" id="tab-content">
 					<!-- tab produksi -->
-					<div class="tab-pane fade show active" id="c-prod" role="tabpanel" aria-labelledby="a-prod">
+					<div class="tab-pane fade" id="c-prod" role="tabpanel" aria-labelledby="a-prod">
 						<table class="table table-sm table-hover  mt-3">
 							<thead style="background-color:rgba(0,0,0,.03)">
 								<tr style="text-align: center">
@@ -212,7 +212,7 @@
 										>
 											<i class="fa fa-edit"></i>
 										</button>
-										<a href="" class="btn btn-sm btn-danger"
+										<a href="<?= site_url('dekidaka/delbm/').$bd->id ?>" class="btn btn-sm btn-danger"
 											onclick="return confirm('yakin akan menghapus data?')">
 											<i class="fa fa-trash"></i>
 										</a>
@@ -268,7 +268,7 @@
 						<td>1018 pcs</td>
 					</tr>
 				</table>
-
+				<div id="tes"></div>
 			</div>
 		</div>
 	</dv>

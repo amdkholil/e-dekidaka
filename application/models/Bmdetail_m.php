@@ -47,7 +47,7 @@ class Bmdetail_m extends CI_Model
             'mesin' => $this->input->post('mesin'),
             'id_bm' => $this->input->post('bm'),
             'detail' => $this->input->post('detail'),
-            'penanganan' => $this->input->post('action'),
+            'penanganan' => $this->input->post('actionls'),
             'pic' => $this->input->post('pic')
         );
         $id = $this->input->post('id');
@@ -57,7 +57,7 @@ class Bmdetail_m extends CI_Model
 
     function delete($id){
 		$this->db->where('id', $id);
-		return $this->db->delete('ng_detail');
+		return $this->db->delete('bm_detail');
 	}
 
 

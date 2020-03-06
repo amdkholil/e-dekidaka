@@ -58,3 +58,16 @@ $('#edit-bm').on('show.bs.modal', function (event) {
     modal.find('.modal-body textarea#penanganan_bd').val(penanganan)
     modal.find('.modal-body input#pic_bd').val(pic)
 })
+
+var url = window.location.pathname
+var menuTab = url.substr(url.lastIndexOf('/') + 1)
+document.getElementById('tes').innerHTML = menuTab
+window.onload=function(){
+    var akelas = document.getElementById('a-'+menuTab)
+    var ckelas = document.getElementById('c-'+menuTab)
+    if (akelas!==null || ckelas!==null) {
+        akelas.setAttribute('aria-selected','true')
+        akelas.classList += ' active'
+        ckelas.classList += ' show active'
+    }
+}

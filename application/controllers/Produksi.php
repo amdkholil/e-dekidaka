@@ -73,7 +73,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/prod'),'refresh');
         }
     }
 
@@ -83,7 +83,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil diubah!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/prod'),'refresh');
         }
     }
 
@@ -92,7 +92,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil dihapus!');
-            redirect($_SERVER['HTTP_REFERER'], 'refresh');
+            redirect($_SERVER['HTTP_REFERER'].'/prod', 'refresh');
         }
     }
 
@@ -103,7 +103,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/ng'),'refresh');
         }
     }
 
@@ -114,7 +114,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/ng'),'refresh');
         }
     }
 
@@ -123,7 +123,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil dihapus!');
-            redirect($_SERVER['HTTP_REFERER'], 'refresh');
+            redirect($_SERVER['HTTP_REFERER'].'/ng', 'refresh');
         }
     }
 
@@ -134,7 +134,7 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/bm'),'refresh');
         }
     }
 
@@ -145,7 +145,17 @@ class Produksi extends CI_Controller{
             $this->session->set_flashdata('warning', $this->db->show_error());
         }else{
             $this->session->set_flashdata('success','Berhasil!');
-            redirect(site_url('produksi/dekidaka/'.$id),'refresh');
+            redirect(site_url('produksi/dekidaka/'.$id.'/bm'),'refresh');
+        }
+    }
+
+    public function delbm($id)
+    {
+        if(!$this->bmdetail_m->delete($id)){
+            $this->session->set_flashdata('warning', $this->db->show_error());
+        }else{
+            $this->session->set_flashdata('success','Berhasil dihapus!');
+            redirect($_SERVER['HTTP_REFERER'].'/bm', 'refresh');
         }
     }
 }
